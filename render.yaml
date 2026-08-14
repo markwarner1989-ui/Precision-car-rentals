@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: precision-car-rentals
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: PAYMENT_MODE
+        value: mock
+      - key: SMS_MODE
+        value: mock
+      - key: ADMIN_EMAIL
+        value: admin@precisioncarrentals.us
+      - key: ADMIN_PASSWORD
+        value: changeme123
+      - key: JWT_SECRET
+        generateValue: true
+      - key: BUSINESS_SMS_TO
+        value: "+17046481760"
